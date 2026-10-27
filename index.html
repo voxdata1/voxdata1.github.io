@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Vox Data | Inteligencia y Tecnología Electoral</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        @layer base {
+            html,body { margin:0; padding:0; }
+            body { overscroll-behavior:none; }
+            main>:first-child { margin-top:0!important; }
+            main>:last-child { margin-bottom:0!important; }
+        }
+        ::-webkit-scrollbar { display:none; }
+        .modal-overlay { transition: opacity 0.25s ease-out; }
+        .modal-content { transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#316bf3", "surface-container-highest": "#d3e4fe", "secondary-fixed-dim": "#b4c5ff", "tertiary-fixed-dim": "#7bd0ff", "error": "#ba1a1a", "on-error": "#ffffff", "tertiary": "#000000", "inverse-primary": "#bec6e0", "on-primary": "#ffffff", "secondary-fixed": "#dbe1ff", "inverse-on-surface": "#eaf1ff", "outline-variant": "#c6c6cd", "primary-fixed-dim": "#bec6e0", "tertiary-container": "#001e2c", "surface-dim": "#cbdbf5", "secondary": "#0051d5", "surface-container-lowest": "#ffffff", "background": "#f8f9ff", "on-primary-container": "#7c839b", "on-error-container": "#93000a", "on-tertiary-fixed": "#001e2c", "on-tertiary-container": "#008ebf", "on-surface": "#0b1c30", "surface": "#f8f9ff", "on-secondary-fixed-variant": "#003ea8", "error-container": "#ffdad6", "inverse-surface": "#213145", "surface-container-high": "#dce9ff", "surface-container": "#e5eeff", "surface-variant": "#d3e4fe", "on-secondary-fixed": "#00174b", "on-primary-fixed-variant": "#3f465c", "on-surface-variant": "#45464d", "primary-container": "#131b2e", "on-background": "#0b1c30", "primary": "#000000", "on-secondary": "#ffffff", "surface-tint": "#565e74", "on-tertiary": "#ffffff", "primary-fixed": "#dae2fd", "on-secondary-container": "#fefcff", "surface-container-low": "#eff4ff", "on-primary-fixed": "#131b2e", "outline": "#76777d", "on-tertiary-fixed-variant": "#004c69", "tertiary-fixed": "#c4e7ff", "surface-bright": "#f8f9ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-2xl": "3rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-base": "1rem", "space-xl": "2rem", "space-2xs": "0.125rem", "gutter-desktop": "1.5rem", "space-3xl": "4rem", "margin-page": "2rem", "space-lg": "1.5rem", "gutter-mobile": "1rem" }, "fontFamily": { "body-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Inter"], "label-mono": ["Inter"] }, "fontSize": { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-mono": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" }] } } } };
+    </script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary selection:text-on-secondary">
+<header class="fixed top-0 left-0 right-0 w-full z-40 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_1px_8px_rgba(11,28,48,0.03)]">
+    <div class="h-16 max-w-7xl mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md">
+        <div class="flex items-center gap-space-md shrink-0">
+            <a class="flex items-center gap-2 cursor-pointer focus:outline-none" href="#">
+                <span class="material-symbols-outlined text-secondary text-[28px]">data_exploration</span>
+                <span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold hidden sm:inline-block">Vox Data</span>
+            </a>
+        </div>
+        <nav class="hidden xl:flex items-center gap-space-lg">
+            <a class="font-body-md text-body-md text-secondary font-semibold hover:text-secondary-container transition-colors" data-scroll-to="#ecosistema" href="#ecosistema">Soluciones</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" data-scroll-to="#ecosistema" href="#ecosistema">Ecosistema Tecnológico</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" data-scroll-to="#propuesta-valor" href="#propuesta-valor">Propuesta de Valor</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" data-trigger="metodologia" href="#">Metodología</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" data-trigger="casos" href="#">Casos de Éxito</a>
+        </nav>
+        <div class="flex items-center gap-space-md shrink-0">
+            <button class="hidden sm:inline-flex font-body-sm text-body-sm text-on-surface-variant hover:text-secondary font-medium transition-colors px-space-xs py-space-xs cursor-pointer focus:outline-none" data-open-modal="modal-portal" type="button">Portal Clientes</button>
+            <button class="inline-flex items-center justify-center font-label-md text-label-md uppercase tracking-wider bg-secondary text-on-secondary px-space-base py-space-sm rounded-lg hover:bg-secondary-container transition-all shadow-sm hover:shadow active:scale-95 cursor-pointer focus:outline-none" data-open-modal="modal-demo" type="button">Agendar Demostración</button>
+        </div>
+    </div>
+</header>
+<main class="w-full pt-16 bg-surface min-h-screen">
+    <div class="flex flex-col w-full">
+        <div class="relative w-full overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[480px] bg-gradient-to-b from-secondary/10 via-surface-container-high/30 to-transparent blur-3xl pointer-events-none -z-10"></div>
+            <!-- 1. HERO SECTION -->
+            <section class="w-full max-w-7xl mx-auto px-gutter-mobile lg:px-gutter-desktop pt-space-xl pb-space-3xl">
+                <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+                    <div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-lowest shadow-sm mb-space-lg hover:shadow-md transition-shadow cursor-default">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+                        </span>
+                        <span class="font-label-mono text-label-mono text-secondary font-semibold uppercase tracking-widest">
+                            Tecnología Electoral &amp; Inteligencia Estratégica
+                        </span>
+                    </div>
+                    <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface tracking-tight mb-space-base">
+                        Transformamos datos en <br class="hidden sm:inline"/>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-secondary via-secondary-container to-on-surface">
+                            estrategias políticas ganadoras
+                        </span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mb-space-xl">
+                        La comunicación política se enfrenta al reto de ser atractiva y convincente. En Vox Data desarrollamos herramientas tecnológicas de vanguardia que agilizan procesos, automatizan la movilización y garantizan precisión electoral absoluta.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center gap-space-md mb-space-2xl">
+                        <button class="inline-flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider bg-secondary hover:bg-secondary-container text-on-secondary px-space-lg py-3 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer focus:outline-none active:scale-95" data-open-modal="modal-demo" type="button">
+                            <span>Agendar Demostración</span>
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 2. ECOSISTEMA TECNOLÓGICO -->
+        <section class="w-full bg-surface-container-low py-space-3xl scroll-mt-16" id="ecosistema">
+            <div class="max-w-7xl mx-auto px-gutter-mobile lg:px-gutter-desktop">
+                <div class="max-w-3xl mb-space-2xl">
+                    <div class="inline-flex items-center gap-space-xs font-label-mono text-label-mono uppercase text-secondary font-semibold tracking-wider mb-space-xs">
+                        <span>Ecosistema Tecnológico Vox Data</span>
+                    </div>
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm">
+                        Suite Integral de Inteligencia Política
+                    </h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Plataformas de software de nivel militar y grado corporativo diseñadas para cada fase de la contienda política y la gestión pública.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+                    <!-- Card 1 -->
+                    <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer border border-transparent hover:border-secondary/30 relative" data-open-product="omnimess">
+                        <div>
+                            <div class="flex items-center justify-between mb-space-base">
+                                <div class="w-12 h-12 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">mark_chat_read</span>
+                                </div>
+                                <span class="font-label-mono text-label-mono font-semibold text-secondary uppercase tracking-widest bg-secondary-fixed/50 px-2 py-0.5 rounded">COMUNICACIÓN & CRM</span>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight mb-space-xs group-hover:text-secondary transition-colors">OmniMess</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-space-base">Plataforma inteligente para mensajería masiva y programación de campañas automatizadas.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer border border-transparent hover:border-secondary/30 relative" data-open-product="idmetrics">
+                        <div>
+                            <div class="flex items-center justify-between mb-space-base">
+                                <div class="w-12 h-12 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">badge</span>
+                                </div>
+                                <span class="font-label-mono text-label-mono font-semibold text-secondary uppercase tracking-widest bg-secondary-fixed/50 px-2 py-0.5 rounded">TERRITORIO & PADRÓN</span>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight mb-space-xs group-hover:text-secondary transition-colors">ID-Metrics</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-space-base">Herramienta de campo para validación rápida de simpatizantes y georreferenciación en tiempo real.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer border border-transparent hover:border-secondary/30 relative" data-open-product="geopoll">
+                        <div>
+                            <div class="flex items-center justify-between mb-space-base">
+                                <div class="w-12 h-12 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">query_stats</span>
+                                </div>
+                                <span class="font-label-mono text-label-mono font-semibold text-secondary uppercase tracking-widest bg-secondary-fixed/50 px-2 py-0.5 rounded">OPINIÓN PÚBLICA</span>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight mb-space-xs group-hover:text-secondary transition-colors">GeoPoll App</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-space-base">Levantamiento de encuestas territoriales y mapas de calor interactivos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PROPUESTA DE VALOR -->
+        <section class="w-full py-space-3xl bg-surface scroll-mt-16" id="propuesta-valor">
+            <div class="max-w-7xl mx-auto px-gutter-mobile lg:px-gutter-desktop">
+                <div class="text-center max-w-3xl mx-auto mb-space-2xl">
+                    <span class="font-label-mono text-label-mono text-secondary font-semibold uppercase tracking-wider block mb-space-xs">Ventaja Analítica Competitiva</span>
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">¿Por qué elegir la arquitectura de Vox Data?</h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl items-center">
+                    <div class="flex flex-col gap-space-lg">
+                        <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border-l-4 border-secondary">
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-2">Integración masiva de datos sociodemográficos</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Transformamos variables dispersas en mapas operativos de alto impacto táctico cruzando censos, variables económicas e historial de voto.</p>
+                        </div>
+                        <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border-l-4 border-secondary-container">
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-2">Tableros de control de nivel Cuarto de Guerra (War Room)</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Visualización instantánea y métricas en tiempo real para tomar decisiones estratégicas antes de que cambie la tendencia.</p>
+                        </div>
+                    </div>
+                    <div class="p-space-xl bg-primary-container text-surface rounded-xl shadow-xl flex items-center justify-center min-h-[300px]">
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-[64px] text-secondary mb-4">security</span>
+                            <h3 class="text-2xl font-bold">Cifrado de Grado Militar</h3>
+                            <p class="mt-2 text-inverse-primary">Túneles TLS 1.3 y servidores dedicados aseguran el anonimato y la confidencialidad de su inteligencia electoral.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant/30 py-space-xl">
+    <div class="max-w-7xl mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-base">
+        <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-on-surface-variant">data_exploration</span>
+            <span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest">© 2026 Vox Data Intelligence Corp.</span>
+        </div>
+        <div class="flex items-center gap-space-lg text-on-surface-variant font-body-sm text-body-sm">
+            <button class="hover:text-on-surface transition-colors cursor-pointer" data-open-info="seguridad" type="button">Seguridad Institucional</button>
+        </div>
+    </div>
+</footer>
+
+<!-- MODAL: AGENDAR DEMOSTRACIÓN CONFIDENCIAL -->
+<div aria-hidden="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary-container/80 backdrop-blur-sm opacity-0 pointer-events-none modal-overlay transition-opacity duration-200" id="modal-demo">
+    <div class="bg-surface-container-lowest text-on-surface w-full max-w-xl rounded-xl shadow-2xl border border-outline-variant/40 overflow-hidden transform scale-95 modal-content max-h-[92vh] flex flex-col">
+        <div class="px-space-lg py-space-base bg-surface-container-low border-b border-outline-variant/30 flex items-center justify-between">
+            <div class="flex items-center gap-space-xs">
+                <span class="material-symbols-outlined text-secondary">lock</span>
+                <div>
+                    <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Agendar Briefing Ejecutivo</h3>
+                    <p class="font-label-mono text-label-mono text-on-surface-variant uppercase">Sesión Privada bajo Confidencialidad</p>
+                </div>
+            </div>
+            <button aria-label="Cerrar modal" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" data-close-modal="" type="button">
+                <span class="material-symbols-outlined text-[20px]">close</span>
+            </button>
+        </div>
+        <div class="p-space-lg overflow-y-auto">
+            <form class="space-y-4" id="form-demo" onsubmit="handleDemoSubmit(event)">
+                <!-- Asunto oculto para tu correo -->
+                <input type="hidden" name="_subject" value="Nuevo Lead Ejecutivo - Vox Data">
+                
+                <div>
+                    <label class="block font-label-md text-label-md uppercase font-semibold text-on-surface mb-1" for="demo-name">Nombre y Apellidos *</label>
+                    <input class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="demo-name" name="nombre" placeholder="Ej. Roberto Morales" required="" type="text"/>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-label-md text-label-md uppercase font-semibold text-on-surface mb-1" for="demo-email">Correo Institucional *</label>
+                        <input class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="demo-email" name="email" placeholder="correo@campana.mx" required="" type="email"/>
+                    </div>
+                    <div>
+                        <label class="block font-label-md text-label-md uppercase font-semibold text-on-surface mb-1" for="demo-cargo">Cargo / Rol *</label>
+                        <input class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="demo-cargo" name="cargo" placeholder="Coordinador Estratégico" required="" type="text"/>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-label-md text-label-md uppercase font-semibold text-on-surface mb-1" for="demo-entidad">Entidad Federativa / Región *</label>
+                    <input class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="demo-entidad" name="entidad" placeholder="Ej. CDMX / Estatal / Nacional" required="" type="text"/>
+                </div>
+                <div>
+                    <label class="block font-label-md text-label-md uppercase font-semibold text-on-surface mb-1" for="demo-comments">Requerimiento o Contexto Estratégico (Opcional)</label>
+                    <textarea class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" id="demo-comments" name="comentarios" placeholder="Breve contexto..." rows="2"></textarea>
+                </div>
+                <div class="flex items-start gap-2 pt-1 text-on-surface-variant font-body-sm">
+                    <input checked="" class="mt-1 rounded text-secondary focus:ring-secondary" id="demo-nda" name="acepta_nda" required="" type="checkbox" value="Sí"/>
+                    <label for="demo-nda">Acepto el tratamiento confidencial conforme al Protocolo Institucional y firma recíproca de NDA.</label>
+                </div>
+                <div class="pt-2">
+                    <button class="w-full py-3 bg-secondary hover:bg-secondary-container text-on-secondary rounded-lg font-label-md uppercase tracking-wider font-semibold transition-all shadow-md active:scale-95 cursor-pointer flex items-center justify-center gap-2" id="btn-submit-demo" type="submit">
+                        <span>Confirmar Solicitud de Demostración</span>
+                        <span class="material-symbols-outlined text-[18px]">verified</span>
+                    </button>
+                </div>
+            </form>
+            <!-- Estado Exitoso tras Envío -->
+            <div class="hidden text-center py-6 space-y-3" id="demo-success-state">
+                <div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-2">
+                    <span class="material-symbols-outlined text-[36px]">verified</span>
+                </div>
+                <h4 class="font-headline-md text-headline-md font-bold text-on-surface">Briefing Solicitado con Éxito</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
+                    Hemos recibido su petición institucional. Un director de cuentas estratégicas se comunicará a la brevedad a través de un canal seguro.
+                </p>
+                <div class="pt-3">
+                    <button class="px-6 py-2.5 bg-primary text-on-primary rounded-lg font-label-md uppercase tracking-wider hover:bg-surface-dim hover:text-on-surface transition-colors cursor-pointer" data-close-modal="" onclick="resetDemoForm()" type="button">
+                        Cerrar Ventana
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // FUNCIONALIDAD DE MODALES
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (!modal) return;
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100', 'pointer-events-auto');
+        const content = modal.querySelector('.modal-content');
+        if (content) {
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modal) {
+        if (!modal) return;
+        modal.classList.remove('opacity-100', 'pointer-events-auto');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        const content = modal.querySelector('.modal-content');
+        if (content) {
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+        }
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-open-modal]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(btn.getAttribute('data-open-modal'));
+        });
+    });
+
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay || e.target.closest('[data-close-modal]')) {
+                closeModal(overlay);
+            }
+        });
+    });
+
+    // ENVÍO REAL DEL FORMULARIO CON AJAX A FORMSPREE
+    async function handleDemoSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const btn = document.getElementById('btn-submit-demo');
+        
+        // Efecto visual de carga
+        btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span><span>Procesando Solicitud Segura...</span>`;
+        btn.disabled = true;
+
+        const data = new FormData(form);
+        
+        try {
+            // ENLACE FORMSPREE INTEGRADO AQUÍ
+            const response = await fetch("https://formspree.io/f/xljjjvye", {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                document.getElementById('form-demo').classList.add('hidden');
+                document.getElementById('demo-success-state').classList.remove('hidden');
+            } else {
+                alert("Ocurrió un problema técnico. Intente de nuevo o escríbanos a voxdata@proton.me");
+            }
+        } catch (error) {
+            alert("Error de conexión. Verifique su internet e intente de nuevo.");
+        } finally {
+            btn.innerHTML = `<span>Confirmar Solicitud de Demostración</span><span class="material-symbols-outlined text-[18px]">verified</span>`;
+            btn.disabled = false;
+        }
+    }
+
+    function resetDemoForm() {
+        document.getElementById('form-demo').reset();
+        document.getElementById('form-demo').classList.remove('hidden');
+        document.getElementById('demo-success-state').classList.add('hidden');
+    }
+</script>
+</body>
+</html>
