@@ -4,19 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vox Data | Inteligencia y Tecnología Electoral</title>
-    
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome para Íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Tailwind CSS (CDN para despliegue rápido) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configuración de Tailwind para colores -->
     <script>
         tailwind.config = {
             theme: {
@@ -31,7 +23,7 @@
                             900: '#020617',
                         },
                         vox: {
-                            blue: '#2563eb', // Blue 600
+                            blue: '#2563eb',
                             light: '#f8fafc',
                             accent: '#3b82f6'
                         }
@@ -43,7 +35,6 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-vox-blue selection:text-white">
 
-    <!-- Navbar / Encabezado -->
     <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
@@ -66,10 +57,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="relative bg-navy-900 text-white overflow-hidden py-24 md:py-32">
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 via-navy-900 to-black opacity-90"></div>
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')]"></div>
         
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center z-10">
             <span class="inline-block px-4 py-1.5 rounded-full border border-vox-blue/30 bg-vox-blue/10 text-blue-300 font-mono text-xs font-semibold tracking-widest uppercase mb-6">
@@ -89,7 +78,6 @@
         </div>
     </section>
 
-    <!-- Ecosistema Tecnológico (Tarjetas estáticas y visibles) -->
     <section id="ecosistema" class="py-24 bg-slate-50 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -99,7 +87,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
                 <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 group">
                     <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-vox-blue transition-colors">
                         <i class="fa-solid fa-comments text-2xl text-vox-blue group-hover:text-white transition-colors"></i>
@@ -107,13 +94,8 @@
                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-2">Comunicación & CRM</span>
                     <h3 class="text-xl font-display font-bold text-navy-900 mb-3">OmniMess</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">Plataforma inteligente para la gestión y automatización de mensajería masiva, programación de campañas y segmentación hiperlocal.</p>
-                    <ul class="text-sm text-slate-500 space-y-2">
-                        <li><i class="fa-solid fa-check text-vox-blue mr-2"></i> WhatsApp Oficial & SMS</li>
-                        <li><i class="fa-solid fa-check text-vox-blue mr-2"></i> Segmentación por sección</li>
-                    </ul>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 group">
                     <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-vox-blue transition-colors">
                         <i class="fa-solid fa-id-card text-2xl text-vox-blue group-hover:text-white transition-colors"></i>
@@ -121,13 +103,8 @@
                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-2">Territorio & Padrón</span>
                     <h3 class="text-xl font-display font-bold text-navy-900 mb-3">ID-Metrics</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">Herramienta de campo para la captura de simpatizantes con OCR óptico instantáneo de credenciales y georreferenciación.</p>
-                    <ul class="text-sm text-slate-500 space-y-2">
-                        <li><i class="fa-solid fa-check text-vox-blue mr-2"></i> Captura en menos de 3 seg.</li>
-                        <li><i class="fa-solid fa-check text-vox-blue mr-2"></i> Detección de duplicados</li>
-                    </ul>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 group">
                     <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-vox-blue transition-colors">
                         <i class="fa-solid fa-map-location-dot text-2xl text-vox-blue group-hover:text-white transition-colors"></i>
@@ -135,13 +112,8 @@
                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-2">Opinión Pública</span>
                     <h3 class="text-xl font-display font-bold text-navy-900 mb-3">GeoPoll App</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">Levantamiento de encuestas territoriales con validación anti-fraude por GPS, auditoría de audio y sincronización offline.</p>
-                    <ul class="text-sm text-slate-500 space-y-2">
-                        <li><i class="fa-solid fa-check text-vox-blue mr-2"></i> Mapas de calor en vivo</li>
-                        <li><i class="fa-solid fa-check text-vox-blue mr-2"></i> Auditoría anti-fraude</li>
-                    </ul>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 group">
                     <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-vox-blue transition-colors">
                         <i class="fa-solid fa-robot text-2xl text-vox-blue group-hover:text-white transition-colors"></i>
@@ -151,7 +123,6 @@
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">Chatbot cognitivo para cualificar simpatizantes y enrutarlos automáticamente a brigadistas locales de manera fluida.</p>
                 </div>
 
-                <!-- Card 5 -->
                 <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 group">
                     <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-vox-blue transition-colors">
                         <i class="fa-solid fa-building-columns text-2xl text-vox-blue group-hover:text-white transition-colors"></i>
@@ -161,7 +132,6 @@
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">Solución post-electoral para gestión de servicios públicos, trazabilidad de peticiones y fidelización de base ciudadana.</p>
                 </div>
 
-                <!-- Card 6 -->
                 <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 group">
                     <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-vox-blue transition-colors">
                         <i class="fa-solid fa-person-booth text-2xl text-vox-blue group-hover:text-white transition-colors"></i>
@@ -174,7 +144,6 @@
         </div>
     </section>
 
-    <!-- Metodologia & Seguridad -->
     <section id="metodologia" class="py-24 bg-white border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
             <div class="lg:w-1/2">
@@ -213,7 +182,6 @@
                 </ul>
             </div>
             
-            <!-- Terminal War Room -->
             <div class="lg:w-1/2 w-full">
                 <div class="bg-navy-900 p-6 rounded-2xl shadow-2xl border border-slate-700 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-full h-10 bg-slate-800 flex items-center px-4 justify-between border-b border-slate-700">
@@ -240,7 +208,6 @@
         </div>
     </section>
 
-    <!-- Contacto / Formulario Funcional (Completamente visible) -->
     <section id="contacto" class="py-24 bg-navy-900 text-white relative">
         <div class="absolute top-0 right-0 w-96 h-96 bg-vox-blue rounded-full filter blur-[150px] opacity-20 transform translate-x-1/3 -translate-y-1/3"></div>
         
@@ -253,7 +220,6 @@
                 </p>
             </div>
             
-            <!-- FORMULARIO FORMSPREE INTEGRADO -->
             <form action="https://formspree.io/f/xljjjvye" method="POST" class="bg-white text-left p-8 md:p-10 rounded-2xl shadow-2xl max-w-2xl mx-auto border border-slate-700">
                 
                 <input type="hidden" name="_subject" value="Nuevo Prospecto - Vox Data">
@@ -300,7 +266,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-navy-800 text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-2">
@@ -315,6 +280,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
